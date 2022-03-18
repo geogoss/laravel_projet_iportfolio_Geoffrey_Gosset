@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
+            $table->string('img');
+            $table->string('title');
+            $table->string('birthday');
+            $table->string('website');
+            $table->string('phone');
+            $table->string('city');
+            $table->integer('age');
+            $table->string('degree');
+            $table->string('email');
+            $table->string('freelance');
             $table->timestamps();
         });
     }

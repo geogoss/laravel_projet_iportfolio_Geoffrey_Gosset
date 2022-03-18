@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Models\About;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $abouts = About::all();
+    return view('welcome', compact('abouts'));
 });
 
 Route::get('/admin', function () {
-    return view('layouts.appAdmin');
+    return view('welcomeAdmin');
 });
+
+Route::get('/about', [AboutController::class, 'about']);
+Route::get('/about/{id}', [AboutController::class, 'edit']);
+Route::put('/update/{id}', [AboutController::class, 'update']);
