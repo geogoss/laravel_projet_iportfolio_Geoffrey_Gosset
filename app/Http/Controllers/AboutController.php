@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -10,7 +11,8 @@ class AboutController extends Controller
     
     public function about () {
         $abouts = About::all();
-        return view('pages.about', compact('abouts'));
+        $skills = Skill::all();
+        return view('pages.about', compact('abouts', 'skills'));
     }
 
     public function edit ($id) {
