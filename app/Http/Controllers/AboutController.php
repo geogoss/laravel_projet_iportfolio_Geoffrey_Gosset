@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Hero;
 use App\Models\Portfolio;
 use App\Models\Service;
@@ -22,7 +23,8 @@ class AboutController extends Controller
         $portfolios = Portfolio::all();
         $services = Service::all();
         $testimonials = Testimonial::all();
-        return view('pages.about', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services', 'testimonials'));
+        $contacts = Contact::all();
+        return view('pages.about', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services', 'testimonials', 'contacts'));
     }
 
     public function edit ($id) {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TextController;
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Hero;
 use App\Models\Portfolio;
 use App\Models\Service;
@@ -35,7 +37,8 @@ Route::get('/', function () {
     $portfolios = Portfolio::all();
     $services = Service::all();
     $testimonials = Testimonial::all();
-    return view('welcome', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services', 'testimonials'));
+    $contacts = Contact::first();
+    return view('welcome', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services', 'testimonials', 'contacts'));
 });
 
 Route::get('/admin', function () {
@@ -76,5 +79,6 @@ Route::resource('service', ServiceController::class);
 // =========Section Testimonial===============
 Route::resource('testimonial', TestimonialController::class);
 
-
+// =========Section Contact===============
+Route::resource('contact', ContactController::class);
 
