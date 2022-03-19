@@ -16,7 +16,8 @@ class HeroSeeder extends Seeder
     public function run()
     {
         DB::table('heroes')->insert([
-            'name' => 'Alex Smith'
+            'name' => 'Alex Smith',
+            'img' => 'img/profile-img.jpg'
         ]);
     }
 }

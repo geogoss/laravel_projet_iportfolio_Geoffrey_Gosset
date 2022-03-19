@@ -4,7 +4,9 @@
     
     <div class="container d-flex">
         <p>Nom de référence : {{$heroes->name}} </p><a class="ms-5" href="/hero/{{$heroes->id}} ">Modifier</a>
-        
+    </div>
+    <div class="container d-flex">
+        <p>Photo de référence : {{$heroes->img}} </p><a class="ms-5" href="/hero/{{$heroes->id}} ">Modifier</a>
     </div>
     <a class="btn btn-success m-3 text-white" href="/text/create">Créer un Texte dynamique pour le Hero</a>
     <table class="table table-striped table-warning">

@@ -20,6 +20,7 @@ class HeroController extends Controller
     public function update ($id, Request $request) {
         $update = Hero::find($id);
         $update->name = $request->name;
+        $update->img = $request->img;
         $update->save();
         return redirect('/about');
     }
