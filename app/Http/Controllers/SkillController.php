@@ -31,7 +31,7 @@ class SkillController extends Controller
         $update->skillname = $request->skillname;
         $update->pourcentage = $request->pourcentage;
         $update->save();
-        return redirect('/skill');
+        return redirect('/about');
 
     }
 
