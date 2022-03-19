@@ -3,4 +3,5 @@
     @include('partialsAdmin.tableHero')
     @include('partialsAdmin.tableAbout')
     @include('partialsAdmin.tableSkill')
+    @include('partialsAdmin.tablePortfolio')
 @endsection

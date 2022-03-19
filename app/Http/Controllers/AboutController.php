@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Hero;
+use App\Models\Portfolio;
 use App\Models\Skill;
 use App\Models\Text;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class AboutController extends Controller
         $skills = Skill::all();
         $heroes =Hero::first();
         $texts = Text::all();
-        return view('pages.about', compact('abouts', 'skills', 'heroes', 'texts'));
+        $portfolios = Portfolio::all();
+        return view('pages.about', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios'));
     }
 
     public function edit ($id) {

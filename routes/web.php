@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TextController;
 use App\Models\About;
 use App\Models\Hero;
+use App\Models\Portfolio;
 use App\Models\Skill;
 use App\Models\Text;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +28,8 @@ Route::get('/', function () {
     $skills = Skill::all();
     $heroes = Hero::first();
     $texts = Text::all();
-    return view('welcome', compact('abouts', 'skills', 'heroes', 'texts'));
+    $portfolios = Portfolio::all();
+    return view('welcome', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios'));
 });
 
 Route::get('/admin', function () {
@@ -52,4 +55,8 @@ Route::post('/text/store', [TextController::class, 'store']);
 Route::get('/text/{id}', [TextController::class, 'edit']);
 Route::put('/text/update/{id}', [TextController::class, 'update']);
 Route::delete('/text/delete/{id}', [TextController::class, 'destroy']);
+
+
+Route::resource('portfolio', PortfolioController::class);
+
 
