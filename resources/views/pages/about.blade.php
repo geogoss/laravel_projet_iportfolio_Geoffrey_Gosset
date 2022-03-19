@@ -5,4 +5,5 @@
     @include('partialsAdmin.tableSkill')
     @include('partialsAdmin.tablePortfolio')
     @include('partialsAdmin.tableService')
+    @include('partialsAdmin.tableTestimonial')
 @endsection

@@ -24,7 +24,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.createTestimonial');
     }
 
     /**
@@ -35,7 +35,13 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Testimonial();
+        $store->text = $request->text;
+        $store->img = $request->img;
+        $store->name = $request->name;
+        $store->formation = $request->formation;
+        $store->save();
+        return redirect('/about');
     }
 
     /**
@@ -57,7 +63,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
-        //
+        return view('pages.editTestimonial', compact('testimonial'));
     }
 
     /**
@@ -69,7 +75,12 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
-        //
+        $testimonial->text = $request->text;
+        $testimonial->img = $request->img;
+        $testimonial->name = $request->name;
+        $testimonial->formation = $request->formation;
+        $testimonial->save();
+        return redirect('/about');
     }
 
     /**
@@ -80,6 +91,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        //
+        $testimonial->delete();
+        return redirect('/about');
     }
 }

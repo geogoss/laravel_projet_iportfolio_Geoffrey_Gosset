@@ -5,12 +5,14 @@ use App\Http\Controllers\HeroController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TextController;
 use App\Models\About;
 use App\Models\Hero;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Skill;
+use App\Models\Testimonial;
 use App\Models\Text;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +34,8 @@ Route::get('/', function () {
     $texts = Text::all();
     $portfolios = Portfolio::all();
     $services = Service::all();
-    return view('welcome', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services'));
+    $testimonials = Testimonial::all();
+    return view('welcome', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services', 'testimonials'));
 });
 
 Route::get('/admin', function () {
@@ -68,5 +71,10 @@ Route::resource('portfolio', PortfolioController::class);
 
 // =========Section Service===============
 Route::resource('service', ServiceController::class);
+
+
+// =========Section Testimonial===============
+Route::resource('testimonial', TestimonialController::class);
+
 
 

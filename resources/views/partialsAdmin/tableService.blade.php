@@ -1,7 +1,7 @@
 <section class="container">
     <h1 class="text-center m-5">Section Service</h1>
     <a class="btn btn-success m-3 text-white" href="/service/create">Créer un Service</a>
-    <table class="table table-striped table-primary">
+    <table class="table table-striped table-info">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -20,11 +20,11 @@
                     <td>{{ $service->title }} </td>
                     <td>{{ $service->text }} </td>
                     <td>{{ $service->delay }} </td>
-                    <td class="d-flex">
+                    <td>
                         <form action="/service/{{ $service->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-light text-danger mx-2">Supprimer</button>
+                            <button type="submit" class="btn btn-light text-danger mb-2">Supprimer</button>
                         </form>
                         <a class="btn btn-light text-info" href="/service/{{ $service->id }}/edit ">Modifier</a>
                     </td>

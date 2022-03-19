@@ -7,6 +7,7 @@ use App\Models\Hero;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Skill;
+use App\Models\Testimonial;
 use App\Models\Text;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class AboutController extends Controller
         $texts = Text::all();
         $portfolios = Portfolio::all();
         $services = Service::all();
-        return view('pages.about', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services'));
+        $testimonials = Testimonial::all();
+        return view('pages.about', compact('abouts', 'skills', 'heroes', 'texts', 'portfolios', 'services', 'testimonials'));
     }
 
     public function edit ($id) {
