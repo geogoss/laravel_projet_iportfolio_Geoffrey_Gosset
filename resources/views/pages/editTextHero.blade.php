@@ -1,4 +1,4 @@
 @extends('layouts.appAdmin')
 @section('contentAdmin')
-    @include('partialsAdmin.formEditSkill')
+    @include('partialsAdmin.formTextEditHero')
 @endsection

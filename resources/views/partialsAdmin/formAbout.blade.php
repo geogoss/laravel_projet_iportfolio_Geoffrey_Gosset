@@ -30,6 +30,9 @@
               <input name="phone" type="text" value="{{$edit->phone}} " class="form-control" id="addTreeInputLatin"
                   aria-describedby="addTreeInputLatinHelp">
           </div>
+
+
+          
           <div class="mb-3">
               <label for="addTreeInputLatin" class="form-label">City</label>
               <input name="city" type="text" value="{{$edit->city}} " class="form-control" id="addTreeInputLatin"

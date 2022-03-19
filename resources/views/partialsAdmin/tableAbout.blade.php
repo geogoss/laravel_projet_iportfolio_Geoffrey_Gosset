@@ -1,4 +1,4 @@
-<section>
+<section class="container">
   <h1 class="text-center m-5">Section ABOUT</h1>
 
     <table class="table table-striped table-danger">
@@ -33,7 +33,7 @@
               <td>{{$about->email}} </td>
               <td>{{$about->freelance}} </td>
               <td>
-                <a href="/about/{{$about->id}} ">Modifier</a>
+                <a class="btn btn-light text-info" href="/about/{{$about->id}} ">Modifier</a>
               </td>
             </tr>   
             @endforeach
