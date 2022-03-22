@@ -14,7 +14,6 @@
                     @if ($loop->count / 2)
                         <div class="col-lg-6" data-aos="fade-up">
 
-
                             <div class="progress">
                                 <span class="skill">{{$skill->skillname}}  <i class="val">{{$skill->pourcentage}}%</i></span>
                                 <div class="progress-bar-wrap">
